@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naruto | Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
     <link rel="shortcut icon" href="img/Naruto.PNG" type="image/x-icon">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -22,7 +23,7 @@
                         Inicial
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="./login.html">Login</a>
                 </li>
@@ -32,7 +33,7 @@
             </ul>
         </div>
     </div>
-    <div class="banner_lc">
+    <div>
         <div class="container">
             <div class="card ">
 
@@ -43,52 +44,65 @@
                     <input id="nome_input" type="text" placeholder="Seu nome">
 
                     <span class="tipo_campo">E-mail:</span>
+                    <div id="email_invalido"></div>
                     <input id="email_input" type="text" placeholder="meuemail@provedor.com">
 
                     <span class="tipo_campo">Senha:</span>
+                    <div id="senha_invalida"></div>
                     <input id="senha_input" type="password" placeholder="******">
 
                     <span class="tipo_campo">Confirmacao da Senha:</span>
+                    <div id="confirma_senha_invalida"></div>
                     <input id="confirmacao_senha_input" type="password" placeholder="******">
 
-                    <span class="tipo_campo">Escolha seu Personagem Favorito:</span>    
-                    <select id="select_personagem">
-                        <option value="" disabled selected>Selecione...</option>
+                    <span class="tipo_campo">Escolha seu Personagem Favorito:</span>
+                    <div id="personagem_selecionado"></div>
+                    <select id="personagem_select">
+                        <option value="0" disabled selected>Selecione...</option>
                         <option value="1">Naruto</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="2">Itachi</option>
+                        <option value="3">Kakashi</option>
+                        <option value="4">Sasuke</option>
+                        <option value="5">Shikamaru</option>
+                        <option value="6">Gaara</option>
+                        <option value="7">Hinata</option>
+                        <option value="8">Jiraya</option>
+                        <option value="9">Minato</option>
+                        <option value="10">Madara</option>
+                        <option value="11">Pain</option>
+                        <option value="12">Obito</option>
+                        <option value="13">Rock Lee</option>
+                        <option value="14">Sakura</option>
+                        <option value="15">Neji</option>
+                        <option value="16">Deidara</option>
+                        <option value="17">Orochimaru</option>
+                        <option value="18">Sasori</option>
+                        <option value="19">Guy</option>
+                        <option value="20">Tsunade</option>
+                       
                     </select>
 
-                    <span class="tipo_campo">Escolha seu Cla:</span>    
-                    <select id="select_personagem">
-                        <option value="" disabled selected>Selecione...</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                    <span class="tipo_campo">Escolha seu Cla:</span>
+                    <div id="cla_selecionado"></div>
+                    <select id="cla_select">
+                        <option value="0" disabled selected>Selecione...</option>
+                        <option value="1">Uchiha</option>
+                        <option value="2">Uzumaki</option>
+                        <option value="3">Senju</option>
+                        <option value="4">Hyuuga</option>
+                        <option value="5">Namikaze</option>
+                        <option value="6">Nara</option>
+                        <option value="7">Hataque</option>
+                        <option value="8">Inuzuka</option>
                     </select>
 
-                    
+
 
 
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
                 </div>
+                <div class="banner_img"></div>
 
             </div>
         </div>
@@ -98,3 +112,83 @@
 </body>
 
 </html>
+<script>
+    function cadastrar() {
+        var nome = nome_input.value
+        var email = email_input.value
+        var senha = senha_input.value
+        var confirma_senha = confirmacao_senha_input.value
+        var personagem = personagem_select.value
+        var cla = cla_select.value
+
+        if (email.indexOf('@') == -1 && email.indexOf('.com') == -1) {
+            email_invalido.innerHTML = `Email sem o '@' e sem '.com'`
+            email_invalido.style.color = 'red'
+            email_input.style.border = '2px solid red'
+
+        } else if (email.indexOf('@') == -1) {
+            email_invalido.innerHTML = `Email sem o '@'`
+            email_invalido.style.color = 'red'
+            email_input.style.border = '2px solid red'
+
+        } else if (email.indexOf('.com') == -1) {
+            email_invalido.innerHTML = `Email sem o '.com'`
+            email_invalido.style.color = 'red'
+            email_input.style.border = '2px solid red'
+        } else {
+            email_invalido.innerHTML = ''
+            email_input.style.border = ''
+
+            if (senha.length < 8) {
+                senha_invalida.innerHTML = `Senha menor que 8 caracteres`
+                senha_invalida.style.color = 'red'
+                senha_input.style.border = '2px solid red'
+            } else {
+                senha_invalida.innerHTML = ''
+                senha_input.style.border = ''
+
+                if (confirma_senha != senha) {
+                    confirma_senha_invalida.innerHTML = 'Senha nao Corresponde com a de Cima'
+                    confirma_senha_invalida.style.color = 'red'
+                    confirmacao_senha_input.style.border = '2px solid red'
+
+                } else {
+                    confirma_senha_invalida.innerHTML = ''
+                    confirmacao_senha_input.style.border = ''
+
+                    if (personagem == 0) {
+                        personagem_selecionado.innerHTML = 'Personagem nao Selecionado'
+                        personagem_selecionado.style.color = 'red'
+                        personagem_select.style.border = '2px solid red'
+
+                    } else {
+                        personagem_selecionado.innerHTML = ''
+                        personagem_select.style.border = ''
+
+                        if (cla == 0) {
+                            cla_selecionado.innerHTML = 'Cla nao selecionado'
+                            cla_selecionado.style.color = 'red'
+                            cla_select.style.border = '2px solid red'
+                        } else {
+                            cla_selecionado.innerHTML = ''
+                            cla_select.style.border = ''
+
+                            Swal.fire(
+                                'Cadastro Realizado',
+                                'Bem Vindo a Honoha',
+                                'sucess'
+                            )
+
+
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+
+
+    }
+</script>

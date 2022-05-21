@@ -2,6 +2,10 @@
   font-family: 'njnaruto' ;
   src: url('fonte/njnaruto.ttf') format('truetype');
 }
+input{
+outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -85,24 +89,27 @@ body {
   border-radius: 10px;
  } 
 
-/* login */
+/* login  */
 
 h2{
   color:#ffff;
    font-size: 50px;
+   width: 100%;
+   
+   
 }
 
-.banner_lc{
-  background-image: url('img/naruto-naruto-fon-list.jpg');
-  height: fit-content;
-  padding: 350px 0;
-  background-size: cover;
-  position: static;
+
+.banner_img{
+height: 81vh;
+width: 50vw;
+background-image: url('img/naruto-naruto-fon-list.jpg');
+background-size: cover;
+position: static;
 
 }
-.banner .container {
-  height: 400px;
-}
+
+
 
 .formulario .tipo_campo {
   font-size: 30px;
@@ -116,13 +123,15 @@ h2{
 }
 
 .container .formulario{
-justify-content: center;
+justify-content: flex-start;
 }
 
 .card{
   display: flex;
-  justify-content: space-around; 
-
+  justify-content: space-between;
+  width: 50vw;
+  padding-top: 50px;
+  
 }
 input {
   margin-bottom: 10px;
