@@ -1,12 +1,14 @@
+@font-face{
+  font-family: 'njnaruto' ;
+  src: url('fonte/njnaruto.ttf') format('truetype');
+}
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Barlow', "Segoe UI", Tahoma, Verdana, sans-serif;
+    font-family: 'njnaruto';
     background-color: black;
   }
     
-  
-  
   .container {
     width: 80%;
     margin: auto;
@@ -14,7 +16,8 @@ body {
   }
 
   .header {
-    border-bottom: 3px solid #ffa500;
+    border-bottom: 45px double #ffa500;
+    
   }
   
   .header .container {
@@ -39,34 +42,124 @@ body {
     color: #ffa500;
   }
   
-  
   .titulo {
     color: #ffa500;
     width: fit-content;
     font-weight: 500;
   }
+
+
   .banner {
     height: fit-content;
     padding: 150px 0;
-    color: white;
     background-image: url("img/naruto36005.jpg");
     background-size: cover;
+    position: static;
   }
   
   .banner .container {
     height: 400px;
-    font-size: 36px;
-    justify-content: center;
-    align-items: center;
+
   }
-  .banner .container {
-    height: 400px;
-    font-size: 36px;
-    justify-content: center;
-    align-items: center;
+
+  .footer {
+    background-color: #ffa500;
+    height: 80px;
+    color: #fff;
+    display: flex;
+    font-size: 20px;
   }
   
- 
+  .footer .container {
+    justify-content: center;
+  }
+
+ /* sobre */
+.paragrafo_sobre{
+  color:#ffff ; 
+  font-size: 30px;
+  margin-bottom: 10px;
+  border: 2px solid #ffa500;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+ } 
+
+/* login */
+
+h2{
+  color:#ffff;
+   font-size: 50px;
+}
+
+.banner_lc{
+  background-image: url('img/naruto-naruto-fon-list.jpg');
+  height: fit-content;
+  padding: 350px 0;
+  background-size: cover;
+  position: static;
+
+}
+.banner .container {
+  height: 400px;
+}
+
+.formulario .tipo_campo {
+  font-size: 30px;
+  font-weight: 600px ;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  color: #ffff;
+}
+
+.container .formulario{
+justify-content: center;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around; 
+
+}
+input {
+  margin-bottom: 10px;
+  border: 2px solid #ffa500;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+select{
+  margin-bottom: 10px;
+  border: 2px solid #ffa500;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.btn {
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600px;
+  font-size: 25px;
+  padding: 10px 15px;
+  color: white;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+  font-family: 'njnaruto';
+  background-color: black;
+}
+
+
+/* cadastro */
+
+
+
 
 
   

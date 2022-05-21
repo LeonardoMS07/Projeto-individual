@@ -6,7 +6,6 @@ id_usuario int primary key auto_increment,
 nome_usuario varchar(255),
 senha varchar(255),
 email varchar(255),
-telefone varchar(45)
 );
 
 create table cla(
