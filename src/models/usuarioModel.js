@@ -19,7 +19,7 @@ function entrar(email, senha) {
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
-function cadastrar(nome, email,senha,personagem,cla) {
+function cadastrar(nome, email,senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
@@ -27,14 +27,8 @@ function cadastrar(nome, email,senha,personagem,cla) {
     var instrucao = `
     INSERT INTO usuario VALUES(null,'${nome}','${senha}','${email}',null,null);
     `;
-    var instrucao2 = `
-    insert into personagem values(null,'${personagem}');
-    `; 
-    var instrucao3 = `
-    insert into cla values(null,'${cla}');
-    `;
     console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao, instrucao2, instrucao3);
+    return database.executar(instrucao);
 }
 
 module.exports = {

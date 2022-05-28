@@ -14,95 +14,49 @@
 </head>
 
 <body>
-    <div class="corpo">
-        <div class="container">
-            <div class="navbar">
-                <div class=" esquerda"><h1>Naruto</h1></div>
-                
+    <div class="janela">
+        <div class="header-left">
+            <h1>Naruto</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
-            <div class="meio">
-                <div class="painel">
-                    <div class="cima">
-                        <div class="inicio"><img src="img/img_inicio.png" alt="">
-                            <div>Inicio</div>
-                        </div>
-                    </div>
-                    <div class="baixo"><img src="img/"alt="">
-                        <div>Log Out</div>
-                    </div>
-                </div>
-                <div class="dashs">
-                    <div class="metricas">
-                        <div class="d_ativos"><div></div>
-                        </div>
-                        <div class="d_alerta"><div></div>
-                        </div>
-                        <div class="d_ideais"><div></div>
-                        </div>
-                    </div>
-                    <div class="teste">
-                        <div class="dash_esquerda">
-                            <div class="dispositivo">
-                                <div> Personagens:</div>
-                               
-                            </div>
-                            <div class="container_grafico">
-                                <div class="grafico"><canvas id="myChart1" class="canvas1"></canvas></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            
+
+            <div class="btn-nav">
+
+                <h3>Gráficos</h3>
+
             </div>
+
+            <!-- <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural de Avisos</h3>
+                </a>
+            </div> -->
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
         </div>
+        <!-- <div class="dash">
+            <div class="btns-dash">
+                O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+                <!-- <button class="btn-chart" onclick="obterDadosGrafico(1)">Aquario 1</button>
+                <button class="btn-chart" onclick="obterDadosGrafico(2)">Aquario 2</button>
+                <button class="btn-chart" onclick="obterDadosGrafico(3)">Aquario 3</button>
+                <button class="btn-chart" onclick="obterDadosGrafico(4)">Aquario 4</button>
+            </div>
+            <div class="graph">
+                <canvas id="canvas_grafico"></canvas>
+            </div> -->
+        </div> 
     </div>
-    <div class="rodape">
-        
-            <div class="nomes">No mundo em que vive os Shinobis, nunca se deve temer a morte.&copy; 2022</div>
-
-        
-    </div>
 
 
-
+    
 </body>
-<script>
-    const labels1 = [
-        '01/03',
-        '02/03',
-        '03/03',
-        '04/03',
-        '05/03',
-        '06/03',
-        '07/03',
-    ];
-
-
-    const data1 = {
-        labels: labels1,
-        datasets: [
-            {
-                label: 'Movimento ',
-                backgroundColor: 'gray',
-                borderColor: 'gray',
-                data: ['25000', '10000', '15000', '3500', '12600', '17900', '2800'],
-            },]
-
-    };
-
-    const config1 = {
-        type: 'bar',
-        data: data1,
-        options: {},
-    };
-
-</script>
-<script>
-    const myChart1 = new Chart(
-        document.getElementById('myChart1'),
-        config1
-    );
-
-
-</script>
 
 </html>

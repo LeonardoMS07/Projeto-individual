@@ -1,210 +1,90 @@
-body{
-    margin: 0%;
-    color: white;
-    background-color: black;
+@font-face{
+    font-family: 'njnaruto' ;
+    src: url('fonte/njnaruto.ttf') format('truetype');
+  }
 
-}
-.corpo{
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   background-color: black;
+   color: white;
+  }
+
+  #janela {
     display: flex;
-    justify-content: center;
+    width: 100vw;
 }
-.container{
-    height: auto;
-    width: 1000px;
-    margin-right: 30px;
-}
-.navbar{
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 25%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    margin-top: 25px;
-}
-.navbar .shoping{
-font-family:  sans-serif;
-}
-.navbar .direita{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 336px;
+    border-right: 10px double #ffa500;
     
 }
-.sino{
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-family: 'njnaruto'; 
+    color: #ffa500;
+}
+
+.hello {
+    width: 100%;
     display: flex;
-    position: relative;
-    display: flex;
-    justify-content: end;
-    height: 25px;
-    width: 25px;
+    justify-content: center;
+    color: #ffa500;
+}
+
+/* .btn-nav-white {
+    width: 40%;
+    background-color: #ffa500;
+    border: 3px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
+} */
+
+
+
+.btn-nav {
+    width: 40%;
+    background-color: #ffa500;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
+}
+
+.btn-nav h3, .btn-logout h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-logout {
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #ffa500;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 100px;
     cursor: pointer;
 }
-.notificaçao{
-background-color: red;
-border-radius: 100%;
-width: 13px;
-height: 13px;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 10px;
-color: white;
-font-weight: bold;
-position: absolute;
-cursor: pointer;
-}
-.navbar .esquerda{
-width: 190px;
-}
-.meio{
-    display: flex;
-    justify-content: space-between;
-    height: 620px;
-    margin-top: 30px; 
-}
-.painel{
-    width: 260px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-right: 60px;
-}
-.painel .cima{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 50%;
-}
-.inicio{
-background-color: black; 
-padding-left: 25px;
-height: 56px;
-border-radius: 14px;
-display: flex;
-align-items: center;
-color: white;
-}
-.painel .baixo{
-    display: flex;
-    justify-content:flex-start;
-    padding-left: 25px;
-}
-.painel img{
-    margin-right: 15px;
-}
-.dashs{
-    width: 1230px;
-    height: 100%;
-}
-.metricas{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.d_ativos{
-right: 100%;
-width: 330px;
-background-color: rgb(0, 0, 0);
-border-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-color: white;
-}
-.d_alerta{
-    right: 100%;
-    width: 445px;
-    background-color: #FF4242;
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.d_ideais{
-    right: 100%;
-    width: 330px;
-    background-color: #128400;
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.teste{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 5px;
-}
-.dash_esquerda{
-    background-color: rgb(31, 31, 31);
-    right:100%;
-    width: 100%;
-    border-radius: 15px;
-    color: white;
-}
-.container_grafico{
-    height: 82%;
-     display: flex;
-      justify-content: center;
-      
-      margin-top: 10px;
-}
-.grafico{
-   
-     width: 72%;
-}
-.dispositivo{
-    color: white;
-    margin-top: 30px;
-    padding-left: 40px;
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
-}
-.div_select{
-    width: 300px;
-     display: flex;
-      justify-content: center;
-       font-size:18px;
-}
-.select{
-    margin-left: 7px;
-     padding-left: 10px;
-      border-radius: 7px;
-       background-color: rgb(41, 38, 38);
-        color: white;
-         font-weight: bold;
-          border:0px;
-}
-.rodape{
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #ffa500;
-width: 100%;
-height: 50px;
-margin-top: 10px;
-}
-.lista{
-    width: 85%;
-    display: flex;
-    justify-content:space-between;
-}
-.lista .direita{
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-}
-.nomes{
-    color: rgb(255, 255, 255);
-    font-family:  sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+
+.btn-logout h3 {
+    margin: 0;
+    padding: 0;
 }
