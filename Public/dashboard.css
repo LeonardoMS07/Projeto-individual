@@ -15,7 +15,7 @@ body {
     display: flex;
     width: 100vw;
 }
-.header-left {
+.painel {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,25 +41,17 @@ h1 {
     color: #ffa500;
 }
 
-.hello {
+.entrou {
     width: 100%;
     display: flex;
     justify-content: center;
     color: #ffa500;
 }
 
-/* .btn-nav-white {
-    width: 40%;
-    background-color: #ffa500;
-    border: 3px solid black;
-    border-radius: 5px;
-    text-align: center;
-    padding: 2% 5%;
-} */
 
 
 
-.btn-nav {
+.btn-grafico {
     width: 40%;
     background-color: #ffa500;
     border-radius: 5px;
@@ -67,12 +59,12 @@ h1 {
     padding: 2% 5%;
 }
 
-.btn-nav h3, .btn-logout h3 {
+.btn-grafico h3, .btn-sair h3 {
     margin: 0;
     padding: 0;
 }
 
-.btn-logout {
+.btn-sair {
     margin: 0;
     padding: 0;
     width: 20%;
@@ -84,7 +76,4 @@ h1 {
     cursor: pointer;
 }
 
-.btn-logout h3 {
-    margin: 0;
-    padding: 0;
-}
+
