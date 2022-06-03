@@ -81,12 +81,9 @@ body {
  /* sobre */
 .paragrafo_sobre{
   color:#ffff ; 
-  font-size: 30px;
-  margin-bottom: 10px;
-  border: 2px solid #ffa500;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
   text-align: center;
-  border-radius: 10px;
  } 
 
 /* login  */
@@ -95,8 +92,6 @@ h2{
   color:#ffff;
    font-size: 50px;
    width: 100%;
-   
-   
 }
 
 
@@ -154,19 +149,38 @@ select{
   border: 0;
   border-radius: 5px;
   font-weight: 600px;
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px 15px;
-  color: #ffa500;
+  color: white;
   width: 120px;
   align-self: center;
   margin-top: 5px;
   font-family: 'njnaruto';
   background-color: black;
+  cursor: pointer;
+
+}
+.btn:hover{
+  background-color:#ffa500;
 }
 
 
-/* cadastro */
 
+.btnLeiaMais{
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600px;
+  font-size: 17px;
+  padding: 10px 15px;
+  color: white;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+  font-family: 'njnaruto';
+  background-color: black;
+  cursor: pointer;
+
+}
 
 
 

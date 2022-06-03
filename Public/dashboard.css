@@ -1,20 +1,22 @@
-@font-face{
-    font-family: 'njnaruto' ;
+@font-face {
+    font-family: 'njnaruto';
     src: url('fonte/njnaruto.ttf') format('truetype');
-  }
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   background-color: black;
-   color: white;
-  }
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
 
-  #janela {
+#janela {
     display: flex;
     width: 100vw;
+    
 }
+
 .painel {
     position: fixed;
     top: 0;
@@ -27,8 +29,9 @@ body {
     justify-content: space-evenly;
     align-items: center;
     border-right: 10px double #ffa500;
-    
+
 }
+
 h1 {
     display: block;
     font-size: 2em;
@@ -37,7 +40,7 @@ h1 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    font-family: 'njnaruto'; 
+    font-family: 'njnaruto';
     color: #ffa500;
 }
 
@@ -57,11 +60,17 @@ h1 {
     border-radius: 10px;
     text-align: center;
     padding: 2% 5%;
+    cursor: pointer;
+    font-family: 'njnaruto';
 }
 
-.btn-grafico h3, .btn-sair h3 {
+
+.btn-grafico h3,
+.btn-sair h3,
+.btn-historia h3 {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 .btn-sair {
@@ -74,6 +83,150 @@ h1 {
     padding: 10px 15px;
     margin-bottom: 100px;
     cursor: pointer;
+    font-family: 'njnaruto';
 }
 
+  .grafico_personagem {
+    display: flex;
+    width: 50%;
+    margin-left: 38%;
+    position: absolute;
+    background-image: url('img/naruto-shippuuden-anime-wallpaper-preview.jpg');  
+    color: #ffa500;
+} 
+
+  .grafico_cla{
+    display: flex;
+    width: 50%;
+    margin-left: 38%;
+    margin-top: 28%;
+    position: absolute;
+    background-image: url('img/naruto-shippuuden-anime-wallpaper-preview.jpg');
+   
+}  
+
+/* historia */
+
+.btn-historia{
+    width: 40%;
+    background-color: #ffa500;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2% 5%;
+    cursor: pointer;
+    font-family: 'njnaruto';
+    
+}
+    
+
+.btn-historia a{
+    text-decoration: none;
+    outline: none;
+}
+
+.dash-right .avisos {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+
+    color: rgb(216, 216, 216);
+    font-family: "Exo 2", sans-serif;
+  }
+  
+  .dash-right .avisos .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dash-right .avisos .container .div-form {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .container .div-form #form_postagem {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .div-form label {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .div-form input {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .dash-right .avisos .div-form textarea {
+    width: 100%;
+    
+    border: 3px solid #ffa500;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .dash-right .avisos .div-form button {
+    cursor: pointer;
+    font-family:'njnaruto';
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #ffa500;
+    width: 120px;
+  }
+  
+  .publicacao-btn-editar {
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 8px;
+    color: white;
+    background-color: #ffa500;
+    width: 80px;
+  }
+  
+  .publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 3px solid #ffa500;
+    padding: 20px;
+    
+  }
+  
+  .publicacao > *:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  
+  .div-results {
+    width: 100%;
+  }
+  
+  .div-results .feed-container {
+    background-color: #ffa500;
+    border-radius: 5px;
+    margin-bottom: 80px;
+    
+  }
+  
+  .div-buttons {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+  
+  .div-buttons > * {
+    margin-left: 30px;
+  }
+
+
+  
 

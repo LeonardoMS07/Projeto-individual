@@ -11,6 +11,14 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 });
 
+router.get("/puxarPersonagem", function (req, res) {
+    usuarioController.puxarPersonagem(req, res);
+});
+
+router.get("/puxarCla", function (req, res) {
+    usuarioController.puxarCla(req, res);
+});
+
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);

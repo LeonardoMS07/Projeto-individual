@@ -8,6 +8,8 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="shortcut icon" href="img/Naruto.PNG" type="image/x-icon">
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
 
 
 
@@ -22,40 +24,313 @@
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            
+
 
             <div class="btn-grafico">
 
-                <h3>Gráficos</h3>
+                <h3>Graficos</h3>
 
             </div>
 
-            <!-- <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+            <div class="btn-historia">
+                <a href="historia.html">
+                    <h3>Historias</h3>
                 </a>
-            </div> -->
+            </div>
 
             <div class="btn-sair" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
         </div>
-        
-        </div> 
+
+    </div>
+    <div class="grafico_personagem">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="grafico_cla">
+        <canvas id="myChart2"></canvas>
     </div>
 
 
-    
+
+
+
+
 </body>
 
 </html>
 <script>
     function limparSessao() {
-    // aguardar();
-    sessionStorage.clear();
-    // finalizarAguardar();
-    window.location = "../login.html";
-}
+        // aguardar();
+        sessionStorage.clear();
+        // finalizarAguardar();
+        window.location = "../login.html";
+    }
 
+    window.onload = obterDadosGrafico()
+    window.onload = obterDadosGrafico2()
+
+
+    function obterDadosGrafico() {
+
+        fetch(`/usuarios/puxarPersonagem/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function plotarGrafico(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: ['Tsunade', 'Guy', 'Sasori', 'Orochimaru', 'Deidara', 'Neji', 'Sakura', 'Rock_Lee', 'Obito', 'Pain', 'Madara', 'Minato', 'Jiraya', 'Hinata',
+                'Gaara', 'Shikamaru', 'Sasuke', 'Kakashi', 'Itachi', 'Naruto'],
+            datasets: [
+                {
+                    label: 'Personagem',
+                    data: [],
+
+                    backgroundColor: '#ffa500'
+                }
+
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            if (registro.personagem == 'Naruto') {
+                dados.datasets[0].data.push(registro.votos);
+            }
+            else if (registro.personagem == 'Itachi') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Kakashi') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Sasuke') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Shikamaruchi') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Gaara') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Hinata') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Jiraya') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Minato') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Madara') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Pain') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Obito') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Rock_Lee') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Sakura') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Neji') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Deidara') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Orochimaru') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Sasori') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else if (registro.personagem == 'Guy') {
+                dados.datasets[0].data.push(registro.votos);
+
+            } else {
+                dados.datasets[0].data.push(registro.votos);
+
+            }
+
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        window.grafico_linha = Chart.Bar(ctx, {
+            data: dados,
+            //Configurações do gráfico
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: true,
+                    text: 'Votos dos Personagens'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 50,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-umidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+    }
+
+    function obterDadosGrafico2() {
+
+        fetch(`/usuarios/puxarCla/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico2(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function plotarGrafico2(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados2 = {
+            labels: ['Inuzuka', 'Hataque','Nara','Namikaze', 'Hyuuga', 'Senju','Uzumaki', 'Uchiha'],
+            datasets: [
+                {
+                    label: 'Cla',
+                    data: [],
+                    backgroundColor: '#ffa500'
+                }
+
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            if (registro.cla == 'Uchiha') {
+                dados2.datasets[0].data.push(registro.votos);
+            }
+            else if (registro.cla == 'Uzumaki') {
+                dados2.datasets[0].data.push(registro.votos);
+
+            } else if (registro.cla == 'Senju') {
+                dados2.datasets[0].data.push(registro.votos);
+
+            } else if (registro.cla == 'Hyuuga') {
+                dados2.datasets[0].data.push(registro.votos);
+
+            } else if (registro.cla == 'Namikaze') {
+                dados2.datasets[0].data.push(registro.votos);
+
+            } else if (registro.cla == 'Nara') {
+                dados2.datasets[0].data.push(registro.votos);
+
+            } else if (registro.cla == 'Hataque') {
+                dados2.datasets[0].data.push(registro.votos);
+
+            } else {
+                dados2.datasets[0].data.push(registro.votos);
+
+            }
+
+        }
+
+        console.log(JSON.stringify(dados2));
+
+        var cty = document.getElementById("myChart2").getContext('2d');
+        window.grafico_linha2 = Chart.Bar(cty, {
+            data: dados2,
+            //Configurações do gráfico
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: true,
+                    text: 'Votos dos Clas'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 50,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-umidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+    }
 </script>
