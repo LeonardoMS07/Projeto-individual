@@ -117,7 +117,7 @@ function cadastrar() {
                             'sucess'
                         )
                         setTimeout(function () {
-                            window.location = "dashboard.html";
+                            window.location = "login.html";
                         }, 1000); // apenas para exibir o loading
 
                     } else {

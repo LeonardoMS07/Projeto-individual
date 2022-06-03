@@ -21,7 +21,9 @@
             <h1>Naruto</h1>
 
             <div class="entrou">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Ola,<span  id="b_usuario">usuário</span>!</h3>
+                <h3>Personagem:<span id="b_personagem">usuário</span></h3>
+                <h3>Cla:</h3><span id="b_cla">usuário</span></h3> 
             </div>
 
 
@@ -68,6 +70,108 @@
         window.location = "../login.html";
     }
 
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    
+
+ 
+var nome_fkCla =  sessionStorage.CLA_USUARIO
+for(var posicao = 1 ; posicao <= nome_fkCla ; posicao ++ ){
+    if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Uchiha'
+
+    }else if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Uzumaki'
+
+    }else if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Senju'
+
+    }else if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Hyuuga'
+
+    }else if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Namikaze'
+
+    }else if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Nara'
+
+    }else if(nome_fkCla == posicao){
+        b_cla.innerHTML = 'Hataque'
+
+    }else{
+        b_cla.innerHTML = 'Inuzuka'
+    }
+
+}
+    
+
+        var nome_fkPersonagem = sessionStorage.PERSONAGEM_USUARIO
+
+        for(var posicao = 1 ; posicao <= nome_fkPersonagem ; posicao ++ ){
+            if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Naruto' 
+
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Itachi'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Kakashi'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Sasuke'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Shikamaru'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Gaara'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Hinata'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Jiraya'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Minato'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Madara'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Pain'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Obito'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Rock_Lee'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Sakura'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Neji'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Deidara'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Orochimaru'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Sasori'
+                
+            } else if(nome_fkPersonagem == posicao){
+                b_personagem.innerHTML = 'Guy'
+                
+            }else{
+                b_personagem.innerHTML = 'Tsunade'
+            }
+
+
+        }
+
+    
     window.onload = obterDadosGrafico()
     window.onload = obterDadosGrafico2()
 
@@ -247,7 +351,7 @@
         console.log('iniciando plotagem do gráfico...');
 
         var dados2 = {
-            labels: ['Inuzuka', 'Hataque','Nara','Namikaze', 'Hyuuga', 'Senju','Uzumaki', 'Uchiha'],
+            labels: ['Inuzuka', 'Hataque', 'Nara', 'Namikaze', 'Hyuuga', 'Senju', 'Uzumaki', 'Uchiha'],
             datasets: [
                 {
                     label: 'Cla',

@@ -50,6 +50,17 @@
 
                     if (resposta.ok) {
                         console.log(resposta);
+                        resposta.json().then(json => {
+                            console.log(json);
+                            console.log(JSON.stringify(json));
+        
+                            sessionStorage.EMAIL_USUARIO = json.email;
+                            sessionStorage.NOME_USUARIO = json.nome_usuario;
+                            sessionStorage.ID_USUARIO = json.id_usuario;
+                            sessionStorage.PERSONAGEM_USUARIO = json.fk_personagem;
+                            sessionStorage.CLA_USUARIO = json.fk_cla;
+                        
+                            
                         Swal.fire(
                             'Login Realizado',
                             'Bem Vindo a Honoha',
@@ -62,6 +73,8 @@
 
 
 
+                    });
+                    
                         
 
                     } else {
