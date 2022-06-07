@@ -65,7 +65,7 @@ function cadastrar() {
 
 
 
-
+//
                     var fkPersonagem = 0
 
                     for (posicao = 0; posicao <= listaPersonagem.length; posicao++) {
@@ -111,17 +111,18 @@ function cadastrar() {
                         cla_selecionado.innerHTML = ''
                         cla_select.style.border = ''
 
-                        Swal.fire(
-                            'Cadastro Realizado',
-                            'Bem Vindo a Honoha',
-                            'sucess'
-                        )
+                        Swal.fire({
+                            position: 'top',
+                            icon: 'success',
+                            title: 'Cadastro Realizado',
+                            showConfirmButton: true,
+                            timer: 7000
+                        })
                         setTimeout(function () {
                             window.location = "login.html";
                         }, 1000); // apenas para exibir o loading
 
                     } else {
-                        throw ("Houve um erro ao tentar realizar o cadastro!");
                         Swal.fire(
                             'Houve um erro ao tentar realizar o cadastro',
                             'Error'
@@ -129,6 +130,8 @@ function cadastrar() {
                         setTimeout(function () {
                             window.location = "cadastro.html";
                         }, 1000);
+                        throw ("Houve um erro ao tentar realizar o cadastro!");
+                       
                     }
                 }).catch(function (resposta) {
                     console.log(`#ERRO: ${resposta}`);
